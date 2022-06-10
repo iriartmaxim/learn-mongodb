@@ -10,7 +10,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - cfgsvr1:/data/db
+      - mongo1:/data/db
 
   mongo2:
     container_name: mongo2
@@ -19,7 +19,7 @@ services:
     ports:
       - 27018:27017
     volumes:
-      - cfgsvr2:/data/db
+      - mongo2:/data/db
 
   mongo3:
     container_name: mongo3
@@ -28,7 +28,7 @@ services:
     ports:
       - 27019:27017
     volumes:
-      - cfgsvr3:/data/db
+      - mongo3:/data/db
 
 volumes:
   mongo1: {}
