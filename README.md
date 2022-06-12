@@ -127,7 +127,7 @@ mongos> sh.ShardCollection("dbtest.movies", {"Key" : "hashed"})
 
 ### Check this with -> ###
 
-### Run on bash >
+### Run on bash 
 ```
 root> for i in {1..50} ; do echo -e "use sharddemo \n db.movies.insertOne({\"title\": \"Spiderman $i\", \"Lenguage\": \"English\"})" | mongosh mongodb://ip:27020; done
 ```
