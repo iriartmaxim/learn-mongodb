@@ -105,27 +105,33 @@ mongos> sh.status()
 ¿How to config Shard Collection?
 
 ### Connect to Mongos Server.
+```
 mongo mongodb://ip:27020 
-
+```
 ### Create Database.
+```
 mongos> use dbtest
-
+```
 ### Create Collection.
+```
 mongos> db.createCollection("movies")
-
+```
 ### Enable sharding
+```
 mongos> sh.enableSharding("dbtest")
-
+```
 ### Select a Key with High Cardinality and Shard a Collection
+```
 mongos> sh.ShardCollection("dbtest.movies", {"Key" : "hashed"})
-
+```
 
 ### Check this with -> ###
 
 ### Run on bash >
+```
 root> for i in {1..50} ; do echo -e "use sharddemo \n db.movies.insertOne({\"title\": \"Spiderman $i\", \"Lenguage\": \"English\"})" | mongosh mongodb://ip:27020; done
-
+```
 ### Run on mongos
+```
 mongos> db.movies.getShardDistribution()
-
-
+```
